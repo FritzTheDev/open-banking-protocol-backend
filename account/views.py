@@ -1,6 +1,6 @@
 from .serializers import AccountSerializer
 from .models import Account
-from rest_framework.generics import ListCreateAPIView, RetrieveAPIView
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 
 # Create your views here.
 # class AccountViewSet(ModelViewSet):
@@ -17,7 +17,7 @@ class AccountList(ListCreateAPIView):
   queryset = Account.objects.all()
   serializer_class = AccountSerializer
 
-class AccountDetail(RetrieveAPIView):
+class AccountDetail(RetrieveUpdateDestroyAPIView):
   queryset = Account.objects.all()
   lookup_field = 'user_id'
   serializer_class = AccountSerializer
