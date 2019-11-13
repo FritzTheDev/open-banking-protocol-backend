@@ -22,7 +22,7 @@ class Account(Model):
   label = CharField(max_length=255)
   account_type = CharField(max_length=10)
   balance_currency = CharField(max_length=3)
-  balance_amount = CharField(default=0)
+  balance_amount = CharField(default=0, max_length=20)
   branch_id = CharField(max_length=20)
   account_routing_scheme = CharField(max_length=30)
   account_routing_address = CharField(max_length=30)
