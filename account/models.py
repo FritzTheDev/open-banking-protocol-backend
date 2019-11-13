@@ -1,4 +1,4 @@
-from django.db.models import Model, CharField,
+from django.db.models import Model, CharField
 
 # Create your models here.
 class Account(Model):
@@ -12,9 +12,9 @@ class Account(Model):
   - branch_id: str
   - account_routing: dict (keys: "scheme": str && "address": str)
 
-  #### NOT IMPLEMENTED ###
+  #### NOT (YET) IMPLEMENTED ###
   - account_attributes: list of AccountAttributes. AccountAttributes are
-  automatically assigned based on the product_code specified in type member
+  automatically assigned based on the product_code specified in account_type member
   """
 
 

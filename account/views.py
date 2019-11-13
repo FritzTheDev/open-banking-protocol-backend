@@ -1,9 +1,9 @@
-from rest_framework.viewsets import ReadOnlyModelViewSet
+from rest_framework.viewsets import ModelViewSet
 from .serializers import AccountSerializer
 from .models import Account
 
 # Create your views here.
-class AccountViewSet(ReadOnlyModelViewSet):
+class AccountViewSet(ModelViewSet):
   """
   ### AccountViewSet
   This viewset automatically gives me "list" & 
