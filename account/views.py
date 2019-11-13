@@ -5,9 +5,9 @@ from .models import Account
 # Create your views here.
 class AccountViewSet(ModelViewSet):
   """
-  ### AccountViewSet
-  This viewset automatically gives me "list" & 
-  "detail" api views, or "actions", if you will.
+  This view gives me retrieve, list, create, update, and delete actions. 
+  
+  Use PUT to create new accounts at a specific ID, not POST to create new ones from scratch
   """
   queryset = Account.objects.all()
   serializer_class = AccountSerializer
