@@ -5,15 +5,6 @@ from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIV
 from django.http import Http404
 from rest_framework.response import Response
 from django.utils.timezone import datetime
-# Create your views here.
-# class AccountViewSet(ModelViewSet):
-#   """
-#   This view gives me retrieve, list, create, update, and delete actions. 
-  
-#   Use PUT to create new accounts at a specific ID, not POST to create new ones from scratch
-#   """
-#   queryset = Account.objects.all()
-#   serializer_class = AccountSerializer
 
 
 class AccountList(ListCreateAPIView):
