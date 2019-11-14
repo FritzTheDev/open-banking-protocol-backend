@@ -18,7 +18,7 @@ class Account(Model):
   """
 
 
-  user_id = CharField(max_length=255)
+  user_id = CharField(max_length=255, unique=True, primary_key=True)
   label = CharField(max_length=255)
   account_type = CharField(max_length=10)
   balance_currency = CharField(max_length=3)
