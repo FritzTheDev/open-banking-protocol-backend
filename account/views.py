@@ -18,8 +18,9 @@ class AccountDetail(RetrieveUpdateDestroyAPIView):
 
 class AccountCheckFundsAvailable(APIView):
   """
-  Checks if the matching account in 
+  Checks if the matching account has sufficient funds & is the right currency.
   """
+  
   def get(self, request, **kwargs):
     account = Account.objects.get(user_id=kwargs['user_id'])
     amountParam = request.GET.get('amount')
