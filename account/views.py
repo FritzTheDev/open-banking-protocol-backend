@@ -35,4 +35,9 @@ class AccountCheckFundsAvailable(APIView):
     currencyParam = request.GET.get('currency')
     now=str(datetime.now())
     if account.balance_currency == currencyParam and float(account.balance_amount) > float(amountParam):
+      # Currency matches & has enough money
       return Response({ "answer": "yes", "date": now }, content_type='application/json')
+    else:
+      # Not enough money in the account or wrong currency type
+      return Response({ "answer": "no", "date": now }, content_type='application/json')
+    
