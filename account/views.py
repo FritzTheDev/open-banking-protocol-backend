@@ -8,10 +8,16 @@ from django.utils.timezone import datetime
 
 
 class AccountList(ListCreateAPIView):
+  """
+  Provides List & Create actions associated with the Account model
+  """
   queryset = Account.objects.all()
   serializer_class = AccountSerializer
 
 class AccountDetail(RetrieveUpdateDestroyAPIView):
+  """
+  Provides Retrieve, Update & Destroy actions associated with the Account model
+  """
   queryset = Account.objects.all()
   lookup_field = 'user_id'
   serializer_class = AccountSerializer
@@ -20,7 +26,7 @@ class AccountCheckFundsAvailable(APIView):
   """
   Checks if the matching account has sufficient funds & is the right currency.
   """
-  
+
   def get(self, request, **kwargs):
     account = Account.objects.get(user_id=kwargs['user_id'])
     amountParam = request.GET.get('amount')
